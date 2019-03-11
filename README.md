@@ -1,6 +1,6 @@
 # ECS
 
-Simple entity component system.
+Simple entity component system in written in Lua.
 
 ### Usage
 
@@ -239,4 +239,4 @@ end
 
 ```
 
-Good luck.
+Props to skyVaultGames as the only real source I could find on actual emplementation of an Entity Component System and as the main inspiration for this system.
