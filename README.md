@@ -2,7 +2,7 @@
 
 Simple entity component system.
 
-## Usage
+### Usage
 
 The system is rather easy to use. The framework is Love2D.
 
