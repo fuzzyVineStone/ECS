@@ -77,16 +77,6 @@ Then, just add them as components.
     ...
 ```
 
-Thirdly, add the entity to the world.
-
-```lua
-    ...
-
-    world:add_entity(player)
-
-    ...
-```
-
 To have something acting upon our entity, we need a system. The systems should be returned through functions.
 
 ```lua
