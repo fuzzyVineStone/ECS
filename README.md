@@ -2,7 +2,7 @@
 
 Simple entity component system in written in Lua. The system should be easy to use and the framework is Love2D.
 
-### Usage
+## Usage
 
 Firstly, create a world to handle the entities and the systems (remember to acquire the module).
 
@@ -237,4 +237,6 @@ end
 
 ```
 
-Props to skyVaultGames as the only real source I could find on actual emplementation of an Entity Component System and as the main inspiration for this system.
+### Appendix
+
+Props to skyVaultGames as the only real source of information I could find on an actual emplementation of an Entity Component System and as the main inspiration to this project.
