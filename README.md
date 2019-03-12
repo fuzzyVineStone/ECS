@@ -1,10 +1,8 @@
 # ECS
 
-Simple entity component system in written in Lua.
+Simple entity component system in written in Lua. The system should be easy to use and the framework is Love2D.
 
 ### Usage
-
-The system is rather easy to use. The framework is Love2D.
 
 Firstly, create a world to handle the entities and the systems (remember to acquire the module).
 
