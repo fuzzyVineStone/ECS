@@ -17,7 +17,7 @@ function love.load()
 end
 ```
 
-Secondly, create an entity and attach the components (preferably inside `love.load()`).
+Secondly, create an entity and attach the components (preferably in `love.load()`).
 
 ```Lua 
 	...
@@ -31,7 +31,7 @@ Secondly, create an entity and attach the components (preferably inside `love.lo
 	...
 ```
 
-You can add components through function returns for more complicated assignment.
+You can add components through function returns for more complex assignment.
 
 ```Lua
 ...
@@ -133,7 +133,7 @@ end
 ...
 ```
 
-Add the system to the world.
+Just add the system to the world.
 
 ```Lua
 	...
@@ -143,7 +143,7 @@ Add the system to the world.
 	...
 ```
 
-To update and draw the world, simply set `world:update(dt)` and world:draw in `love.update(dt)` and `love.draw()` respectively. Don't for get pass delta time.
+To update and draw the world, simply set `world:update(dt)` and `world:draw` in `love.update(dt)` and `love.draw()` respectively. Don't for get pass delta time.
 
 ```Lua
 ...
