@@ -242,7 +242,7 @@ end
 
 ### Entity
 
-`ecs.entity.new()`: returns entity. (see `(world):create_entity`.)
+`ecs.entity.new()`: only returns entity. (see `(world):create_entity`.)
 
 `(entity):add_component(component)`: attaches component to the entity.
 
