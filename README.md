@@ -237,6 +237,6 @@ end
 
 ```
 
-#### Appendix
+### Appendix
 
 Props to @skyVaultGames as the only real source of information I could find on an actual emplementation of an Entity Component System and as the main inspiration to this project.
