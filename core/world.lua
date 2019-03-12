@@ -10,6 +10,7 @@ return {
 
 		function world:create_entity()
 			local _entity = entity.new()
+			table.insert(self.entities, _entity)
 			return _entity
 		end
 
