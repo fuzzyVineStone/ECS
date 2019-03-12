@@ -48,7 +48,7 @@ end
 function rectangle_component(width, height)
 	local component = ecs.component.new("shape")
 
-	component.w = width
+    component.w = width
 	component.h = height
 
 	return component
