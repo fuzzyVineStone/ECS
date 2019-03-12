@@ -224,56 +224,6 @@ function love.draw()
 end
 ```
 
-## Reference
-
-### Component
-
-`ecs.component.new(id)`: returns component with given id.
-
-### Entity
-
-`ecs.entity.new()`: only returns entity. (see `(world):create_entity`.)
-
-`(entity):add_component(component)`: attaches component to the entity.
-
-`(entity):remove_component(component)`: detaches component from the entity.
-
-`(entity):get(id)`: returns entity with given component id.
-
-`(entity):destroy()`: sets entity label "destroy" to `true`, effectively removing it next update/tick.
-
-### System
-
-Note: if in doubt, reread the guide.
-
-`ecs.system.new(requires)`: returns system with table of required components.
-
-`(system):load(entity)`: operate on entity on load. (initial dummy function.)
-
-`(system):update(dt, entity)`: operate on entity each update/tick. (initial dummy function.)
-
-`(system):draw(entity)`: meant for drawing (practically only used in a renderer system). (initial dummy function.)
-
-`(system):destroy(entity)`: operations to be performed just before destruction of an entity. (initial dummy function.)
-
-### World
-
-`ecs.world.new()`: returns entity system world.
-
-`(world):create_entity()`: returns entity and adds it to the world.
-
-`(world):add_entity(entity)`: adds entity to the world and should only be used on entities created with `ecs.entity.new()`)
-
-`(world):remove_entity(entity)`: removes given entity from the world.
-
-`(world):add_system(system)`: adds system to the world.
-
-`(world):remove_system(system)`: removes system from the world.
-
-`(world):update(dt)`: updates the entity system world and in turn all entities.
-
-`(world):draw()`: draws the entity system world.
-
 ## Appendix
 
 Props to @skyVaultGames as the only real source of information I could find on an actual emplementation of an Entity Component System and as the main inspiration to this project.
