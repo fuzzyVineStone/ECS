@@ -7,7 +7,7 @@ return {
 
 		function system:match(entity)
 			for i=1, #self.requires do
-				if entity:get(self.requires[i]) == nil then
+				if not entity:get(self.requires[i]) then
 					return false
 				else
 					return true
