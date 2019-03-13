@@ -114,7 +114,7 @@ function love.draw()
 end
 ```
 
-For a more complete walkthrough and a reference sheet, see the [wiki](https://github.com/fuzzyVineStone/ECS/wiki).
+For an extensive guide and a reference sheet, see the [wiki](https://github.com/fuzzyVineStone/ECS/wiki).
 
 ## Appendix
 
