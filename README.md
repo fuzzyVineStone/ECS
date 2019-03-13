@@ -17,7 +17,7 @@ function love.load()
 end
 ```
 
-Secondly, create an entity and attach the components (preferably in `love.load()`).
+Secondly, create an entity and attach a component (preferably in `love.load()`).
 
 ```lua
     ...
@@ -31,7 +31,7 @@ Secondly, create an entity and attach the components (preferably in `love.load()
     ...
 ```
 
-You can add components through function returns for more complex assignment.
+You can create components through function returns for more complex assignment.
 
 ```lua
 ...
@@ -45,34 +45,16 @@ function position_component(x, y)
     return component
 end
 
-function rectangle_component(width, height)
-    local component = ecs.component.new("shape")
-
-    component.w = width
-    component.h = height
-
-    return component
-end
-
-function circle_component(radius)
-    local component = ecs.component.new("shape")
-
-    component.r = radius
-
-    return component
-end
-
 ...
 ```
 
-Then, just add them as components.
+Then add it as a component.
 
 ```lua
     ...
 
     -- Components added through function returns.
     player:add_component(position_component())
-    player:add_component(rectangle_component())
 
     ...
 ```
@@ -85,14 +67,13 @@ To have something acting upon our entity, we need a system. The systems should b
 function renderer_system()
     -- A system typically requires components. This way
     -- the system knows which entities to act upon.
-    local system = ecs.system.new({ "position", "shape" })
+    local system = ecs.system.new({ "position" })
 
     -- The draw function overrides the module's and is used
     -- to specify in which way you want to draw you entities.
     function system:draw(entity)
         -- Get the entity of component "position" and "shape" (though they may be the same).
         local position = entity:get("position")
-        local shape    = entity:get("shape")
 
         -- If the entity has the "player" component, set
         -- another color. Otherwise, set the color to white.
@@ -100,19 +81,6 @@ function renderer_system()
             love.graphics.setColor(1, 0.5, 0.3)
         else
             love.graphics.setColor(1, 1, 1)
-        end
-
-        -- If the "shape" component has a radius, draw a circle.
-        if shape.r then
-            love.graphics.circle("fill", position.x, position.y, shape.r)
-
-        -- If the "shape" component has a width and a height, draw a rectangle.
-        elseif shape.w and shape.h then
-            love.graphics.rectangle("fill", position.x, position.y, shape.w, shape.h)
-
-        -- If none of the above, assert that dimensions are missing.
-        else
-            assert(false, "'shape' requires dimensions.")
         end
     end
 
@@ -136,84 +104,6 @@ To update and draw the world, simply set `world:update(dt)` and `world:draw` in 
 
 ```lua
 ...
-
-function love.update(dt)
-    world:update(dt)
-end
-
-function love.draw()
-    world:draw()
-end
-```
-
-Here is an overview of the full code:
-
-```lua
-local ecs = require("lib.ecs")
-
-function position_component(x, y)
-    local component = ecs.component.new("position")
-
-    component.x = x
-    component.y = y
-
-    return component
-end
-
-function rectangle_component(width, height)
-    local component = ecs.component.new("shape")
-
-    component.w = width
-    component.h = height
-
-    return component
-end
-
-function circle_component(radius)
-    local component = ecs.component.new("shape")
-
-    component.r = radius
-
-    return component
-end
-
-function renderer_system()
-    local system = ecs.system.new({ "position", "shape" })
-
-    function system:draw(entity)
-        local position = entity:get("position")
-        local shape    = entity:get("shape")
-
-        if entity:get("player") then
-            love.graphics.setColor(1, 0.5, 0.3)
-        else
-            love.graphics.setColor(1, 1, 1)
-        end
-
-        if shape.r then
-            love.graphics.circle("fill", position.x, position.y, shape.r)
-        elseif shape.w and shape.h then
-            love.graphics.rectangle("fill", position.x, position.y, shape.w, shape.h)
-        else
-            assert(false, "Shape requires dimensions.")
-        end
-    end
-
-    return system
-end
-
-function love.load()
-    world = ecs.world.new()
-
-    player = world:create_entity()
-
-    player:add_component(ecs.component.new("player"))
-    player:add_component(position_component())
-    player:add_component(rectangle_component())
-
-    world:add_entity(player)
-    world:add_system(renderer_system())
-end
 
 function love.update(dt)
     world:update(dt)
