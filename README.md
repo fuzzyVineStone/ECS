@@ -72,7 +72,7 @@ function renderer_system()
     -- The draw function overrides the module's and is used
     -- to specify in which way you want to draw you entities.
     function system:draw(entity)
-        -- Get the entity of component "position" and "shape" (though they may be the same).
+        -- Get the entity of component "position".
         local position = entity:get("position")
 
         -- If the entity has the "player" component, set
@@ -113,6 +113,8 @@ function love.draw()
     world:draw()
 end
 ```
+
+For a more complete walkthrough and a reference sheet, see the wiki.
 
 ## Appendix
 
