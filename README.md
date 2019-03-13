@@ -4,7 +4,7 @@ Simple entity component system written in Lua utilizing the LÖVE (love2D) frame
 
 For an extensive guide and a reference sheet, see the [wiki](https://github.com/fuzzyVineStone/ECS/wiki).
 
-## Usage
+## Quick walkthrough
 
 Firstly, create a world to handle the entities and the systems (remember to acquire the module).
 
