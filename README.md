@@ -2,7 +2,7 @@
 
 Simple entity component system written in Lua utilizing the LÖVE (love2D) framework. The system should be easy to use.
 
-For an extensive guide and a reference sheet, see the [wiki](https://github.com/fuzzyVineStone/ECS/wiki).
+For an extensive guide and a reference sheet, see the [wiki](https://github.com/fuzzyVineStone/ECS/wiki/Introduction).
 
 ## Quick walkthrough
 
@@ -116,7 +116,7 @@ function love.draw()
 end
 ```
 
-For an extensive guide and a reference sheet, see the [wiki](https://github.com/fuzzyVineStone/ECS/wiki).
+For an extensive guide and a reference sheet, see the [wiki](https://github.com/fuzzyVineStone/ECS/wiki/Introduction).
 
 ## Appendix
 
