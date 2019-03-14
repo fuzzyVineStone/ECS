@@ -1,7 +1,7 @@
-entity	  = require("core.entity")
-component = require("core.component")
-system	  = require("core.system")
-world	  = require("core.world")
+entity	  = require("lib.ecs-core.entity")
+component = require("lib.ecs-core.component")
+system	  = require("lib.ecs-core.system")
+world	  = require("lib.ecs-core.world")
 
 return {
 	entity	  = entity,

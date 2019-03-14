@@ -1,5 +1,5 @@
-local entity = require("core.entity")
-local system = require("core.system")
+local entity = require("lib.ecs-core.entity")
+local system = require("lib.ecs-core.system")
 
 return {
 	new = function()
