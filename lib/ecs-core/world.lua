@@ -45,11 +45,11 @@ return {
 						if system:match(entity) then
 							if not entity.loaded then
 								system:load(entity)
-								entity.loaded = true
 							end
 							system:update(dt, entity)
 						end
 					end
+					entity.loaded = true
 				end
 			end
 		end
