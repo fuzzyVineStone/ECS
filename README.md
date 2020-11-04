@@ -102,7 +102,7 @@ Just add the system to the world.
     ...
 ```
 
-To update and draw the world, simply set `world:update(dt)` and `world:draw` in `love.update(dt)` and `love.draw()` respectively. Don't forget to pass delta time.
+To update and draw the world, simply set `world:update(dt)` and `world:draw` in `love.update(dt)` and `love.draw()` respectively. Don't forget to pass in delta time.
 
 ```lua
 ...
