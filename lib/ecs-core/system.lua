@@ -9,10 +9,9 @@ return {
 			for i=1, #self.requires do
 				if not entity:get(self.requires[i]) then
 					return false
-				else
-					return true
 				end
 			end
+			return true
 		end
 
 		function system:load(entity)	   end
